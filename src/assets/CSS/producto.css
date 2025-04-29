@@ -1,0 +1,7 @@
+.producto {
+    margin: 20px;
+}  
+.producto ul {
+    list-style: disc;
+    padding-left: 20px;
+}  
