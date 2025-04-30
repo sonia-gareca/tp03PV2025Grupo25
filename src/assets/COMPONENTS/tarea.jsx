@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../CSS/tarea.css';
+import '../CSS/estilos.css';
 
 function Tarea() {
     const [tareas, setTareas] = useState([]);
@@ -10,11 +10,13 @@ function Tarea() {
             setTareas([...tareas, { texto: nuevaTarea, completada: false }]);
             setNuevaTarea('');
         }
+       
     };
 
     const eliminarTarea = (index) => {
         const nuevasTareas = tareas.filter((_, i) => i !== index);
         setTareas(nuevasTareas);
+        
     };
 
     const completarTarea = (index) => {
