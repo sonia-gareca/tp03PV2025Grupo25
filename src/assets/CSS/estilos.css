@@ -5,7 +5,7 @@ body{
     font-weight: 400;
     font-style: normal;
     margin: 20px;
-    background-color: #f8f9;
+    background-color: hsla(60, 8%, 25%, 0.6);
     color: hsl(71, 32%, 75%);
     line-height: 1.6;
     text-align: center;
