@@ -12,6 +12,8 @@ function Producto() {
                 ))}
             </ul>
         </div>
+
+    
     );
 }
 export default Producto;
