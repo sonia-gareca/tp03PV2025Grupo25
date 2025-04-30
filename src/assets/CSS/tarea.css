@@ -1,0 +1,13 @@
+.tarea {
+    margin: 20px;
+} 
+.tarea input {
+    margin-right: 10px;
+} 
+.tarea ul {
+    list-style: none;
+    padding: 0;
+}
+.tarea li {
+    margin: 5px 0;
+}  
