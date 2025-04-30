@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-.tarea{
+body{
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
     margin: 20px;
     background-color: #f8f9;
-    color: #343a40;
+    color: hsl(71, 32%, 75%);
     line-height: 1.6;
     text-align: center;
     display: flex;
@@ -19,7 +19,7 @@ h1{
     margin-bottom: 20px;
 }
 
-.producto{
+.container{
     max-width: 800px;
     margin: 0 auto;
     background-color: #ffc;
