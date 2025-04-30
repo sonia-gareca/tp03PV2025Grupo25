@@ -23,32 +23,4 @@ function Tarea() {
     );
     setTareas(nuevasTareas);
 };
-return (
-    <div className="tarea">
-        <h2>Lista de Tareas</h2>
-        <input
-            type="text"
-            value={nuevaTarea}
-            onChange={(e) => setNuevaTarea(e.target.value)}
-            placeholder="Nueva tarea"
-        />
-        <button onClick={agregarTarea}>Agregar</button>
 
-        <ul>
-        {tareas.map((tarea, index) => (
-            <li key={index}>
-                <span
-                style={{ textDecoration: tarea.completada ? 'line-through' : 'none' }}
-                onClick={() => completarTarea(index)}
-                >
-                {tarea.texto}
-            </span>
-            <button onClick={() => eliminarTarea(index)}>Eliminar</button>
-        </li>
-        ))}
-    </ul>
-</div>
-);
-}
-
-export default Tarea;
