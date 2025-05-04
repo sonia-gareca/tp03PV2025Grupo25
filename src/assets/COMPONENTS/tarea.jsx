@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import '../CSS/tarea.css';
 
+/*
 function Tarea() {
     const [tareas, setTareas] = useState([]);
     const [nuevaTarea, setNuevaTarea] = useState('');
@@ -53,3 +54,53 @@ function Tarea() {
 } // Cierra correctamente la función Tarea
 
 export default Tarea;
+*/
+
+//SEGUNDA PARTE DEL TRABAJO PRACTICO NODIFICADO
+
+function Tareas (){
+    //estado para manejar el formulario
+    const [descripcion , setDescripcion] = useState ('');
+    const [fecha, setFecha]= useState('');
+
+    //estado para almacenar la lista de tarea
+    const [tareas, setTareas]= useState ([]);
+
+    let idCounter = 0;
+    const mensajeSubmit = (evento) =>{
+        evento.preventDefault ();
+
+        //crear tarea
+        const nuevaTarea = {
+            id: Date.now(), // ID único
+            descripcion,
+            fecha,
+            realizada: false, // nuevo estado de realizacion
+          };
+    
+        //agregar nueva tarea al array
+        setTareas([...tareas,nuevaTarea]);
+        
+        //limpiar el formulario
+        setDescripcion('');
+        setFecha('');
+       
+    };
+    //eliminar un elemento
+    const eliminarTarea = (id) => {
+        setTareas(tareas.filter((tarea) => tarea.id !== id));
+      };
+
+     // NUEVO: Marcar tarea como realizada
+  const marcarComoRealizada = (id) => {
+    setTareas(
+      tareas.map((tarea) =>
+        tarea.id === id ? { ...tarea, realizada: !tarea.realizada  } : tarea
+      )
+    );
+  };
+
+    // AQUI VA EL RETURN 
+};
+
+export default Tareas;
