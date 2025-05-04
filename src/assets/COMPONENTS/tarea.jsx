@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '../CSS/tarea.css';
-
+/*
 function Tarea() {
     const [tareas, setTareas] = useState([]);
     const [nuevaTarea, setNuevaTarea] = useState('');
@@ -23,7 +23,7 @@ function Tarea() {
         );
         setTareas(nuevasTareas);
     };
-
+*/
     return(
         <div>
             <h2>Agregar Nueva Tarea</h2>
@@ -64,6 +64,6 @@ function Tarea() {
             </ul>
         </div>
     )
-} // Cierra correctamente la función Tarea
+};
 
 export default Tarea;
