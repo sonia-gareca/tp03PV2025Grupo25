@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body{
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 20px;
+    background-color: hsla(60, 8%, 25%, 0.6);
+    color: hsl(71, 32%, 75%);
+    line-height: 1.6;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    color: #337ab7;
+    margin-bottom: 20px;
+}
+
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffc;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2{
+    color: #007bfd;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 10px;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+.producto h2{
+    color: #28a745;
+}
+
+.producto ul li{
+    padding: 10 px 0;
+    border-bottom: 1px dashed #ccc;
+}
+
+.producto  ul li:last-child{
+    border-bottom: none;
+}
+
+.tarea{
+    padding: 20px;
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    background-color: #f0f8;
+}
+
+.tarea h2{
+    color: #0056b3;
+}
+
+.tarea input[type="text"] {
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    margin-right: 10px;
+    font-size: 16px;
+    flex-grow: 1;
+}
+
+.tarea button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.tarea button:hover {
+    background-color: #0056b3;
+}
+
+.tarea ul li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #dee2e6;
+    justify-content: space-between;
+}
+
+.tarea ul li:last-child {
+    border-bottom: none;
+}
+
+.tarea ul li span {
+    flex-grow: 1;
+    margin-right: 15px;
+    padding: 8px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.tarea ul li span.completed {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+.tarea ul li button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.tarea ul li button:hover {
+    background-color: #c82333;
+}
+
+
+.tarea > div:first-child {
+    display: flex;
+    margin-bottom: 20px;
+}

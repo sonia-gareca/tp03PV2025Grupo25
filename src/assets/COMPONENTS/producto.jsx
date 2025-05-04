@@ -1,4 +1,4 @@
-import '../CSS/producto.css';
+import '../CSS/estilos.css';
 
 function Producto() {
     const productos = ['Monitor', 'Teclado', 'Mouse', 'Notebook', 'Auriculares'];
