@@ -14,7 +14,7 @@ const Productos = () => {
         { nombre: "Impresora Multifunción", precio: 38 }
 
     ]);
-}
+
 
 // 1. Mostramos los productos y sus precios usando forEach
 const mostrarProductos = () => {
@@ -27,14 +27,14 @@ const mostrarProductos = () => {
         );
     });
     return listaProductos;
-}
+};
 
 // 3. Creamos un array con productos con el IVA incluido en el precio
-/*const productosConIVA = productos.map(producto => ({
+const productosConIVA = productos.map(producto => ({
     ...producto, precioConIVA: producto.precio * 1.21
 }));
 
-*/
+
 return (
     <div>
         <h2>Lista de Productos</h2>
@@ -48,5 +48,7 @@ return (
         ))}
     </div>
 );
+
+};
 
 export default Productos;
