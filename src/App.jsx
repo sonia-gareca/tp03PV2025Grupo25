@@ -1,5 +1,5 @@
-import Producto from './components/Producto';
-import Tarea from './components/Tarea';
+import Producto from './assets/COMPONENTS/producto';
+import Tarea from './assets/COMPONENTS/tarea';
 
 function App() {
   return (
