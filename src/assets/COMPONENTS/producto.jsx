@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import '../CSS/producto.css';
 
 function Producto() {
@@ -36,6 +35,8 @@ function Producto() {
                 ))}
             </ul>
         </div>
+
+    
     );
 }
 
