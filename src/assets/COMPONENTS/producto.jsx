@@ -53,5 +53,5 @@ const Productos = () => {
         </div>
     );
 };
-
+// areglando error de exportacion
 export default Productos;
