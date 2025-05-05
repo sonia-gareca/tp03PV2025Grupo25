@@ -24,3 +24,11 @@ Erni97
 -Gareca Sonia 
 sonia-gareca
 
+
+IMPORTANTE: 
+Hola profe las ramas de angelo quiroga y de ernesto angel farfan no se pudieron fusionar a la rama principal, no intermpretamos los conflictos para poder completar la fusion, pero en las 
+ranmas estan los ejercicios resueltos
+
+
+
+
