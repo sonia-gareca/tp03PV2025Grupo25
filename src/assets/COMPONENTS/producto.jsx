@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../CSS/producto.css';
 
-const Productos = () => {
+const Productos = () => { //1) Estado inicial con productos y precios
     const [productos, setProductos] = useState([
         { nombre: "Smartphone", precio: 55 },
         { nombre: "Auriculares Inalámbricos", precio: 12 },
