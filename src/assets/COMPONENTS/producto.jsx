@@ -1,5 +1,6 @@
-import '../CSS/estilos.css';
 import { useState } from 'react';
+
+import '../CSS/estilos.css';
 
 const Productos = () => {
     const [productos, setProductos] = useState([
@@ -15,43 +16,67 @@ const Productos = () => {
         { nombre: "Impresora Multifunción", precio: 38 }
     ]);
 
-    const [productosOrdenados, setProductosOrdenados] = useState([...productos]);
+    const [productosConIVA, setProductosConIVA] = useState([]);
+    const [mostrarConIVA, setMostrarConIVA] = useState(false);
 
-    // Función para ordenar los productos por precio de menor a mayor
-    const ordenarProductos = () => {
-        const productosOrdenados = [...productos].sort((a, b) => a.precio - b.precio);
-        setProductosOrdenados(productosOrdenados);
+    // 1. Mostramos los productos y sus precios usando forEach
+    const mostrarProductos = () => {
+        return productos.map(producto => (
+            <div key={producto.nombre}>
+                Producto: {producto.nombre} - Precio: ${producto.precio}
+            </div>
+        ));
     };
 
-    // Función para eliminar el producto con el precio más bajo
-    const eliminarProductoMasBarato = () => {
-        // Encontrar el precio más bajo en el array de productos
-        const precioMasBajo = Math.min(...productos.map((producto) => producto.precio));
+    // 3. Creamos un array con productos con el IVA incluido en el precio
+    const calcularPrecioConIVA = () => {
+        const productosConIVAIncluidos = productos.map(producto => ({
+            ...producto,
+            precioConIVA: parseFloat((producto.precio * 1.21).toFixed(2))
+        }));
+        setProductosConIVA(productosConIVAIncluidos);
+        setMostrarConIVA(true);
+    };
 
-        // Filtrar los productos para eliminar el que tiene el precio más bajo
-        const productosActualizados = productos.filter(
-            (producto) => producto.precio !== precioMasBajo
-        );
-
-        // Actualizar los estados
+    // 4. Eliminar el producto de menor precio
+    const eliminarProductoMenorPrecio = () => {
+        const menorPrecio = Math.min(...productos.map(producto => producto.precio));
+        const productosActualizados = productos.filter(producto => producto.precio !== menorPrecio);
         setProductos(productosActualizados);
-        setProductosOrdenados(productosActualizados);
+    };
+
+    // 5. Ordenar productos de menor a mayor precio
+    const ordenarProductosPorPrecio = () => {
+        const productosOrdenados = [...productos].sort((a, b) => a.precio - b.precio);
+        setProductos(productosOrdenados);
     };
 
     return (
-        <div className="producto">
-            <h2>Lista de Productos</h2>
-            <button onClick={ordenarProductos}>Ordenar productos por precio</button>
-            <button onClick={eliminarProductoMasBarato}>Eliminar el producto más barato</button>
-            <ul>
-                {productosOrdenados.map((prod, index) => (
-                    <li key={index}>
-                        {prod.nombre} - ${prod.precio}
-                    </li>
-                ))}
-            </ul>
+        <div>
+            <h2>Lista de Productos:</h2>
+            {mostrarProductos()}
+
+            <h2>Productos con IVA (21%) incluido:</h2>
+            <button onClick={calcularPrecioConIVA}>Mostrar productos con IVA</button>
+
+            {mostrarConIVA && productosConIVA.length > 0 && (
+                <div>
+                    <h3>Productos con IVA incluido</h3>
+                    {productosConIVA.map(producto => (
+                        <div key={producto.nombre}>
+                            Producto: {producto.nombre} - Precio con IVA: ${producto.precioConIVA}
+                        </div>
+                    ))}
+                </div>
+            )}
+
+            <h2>Eliminar Producto de Menor Precio:</h2>
+            <button onClick={eliminarProductoMenorPrecio}>Eliminar producto más barato</button>
+
+            <h2>Ordenar Productos por Precio:</h2>
+            <button onClick={ordenarProductosPorPrecio}>Ordenar de menor a mayor precio</button>
         </div>
     );
 };
-// areglando error de exportacion
+
 export default Productos;
